@@ -8,8 +8,8 @@ module.exports = (self) => {
     callback = callback || function noop () {}
     self.log('stop')
 
-    if (self.state.state() === 'stopped') {
-      return callback()
+    if (self.state.state() !== 'running') {
+      return done(new Error('Not able to stop from state: ' + self.state.state()))
     }
 
     const done = (err) => {
@@ -20,10 +20,6 @@ module.exports = (self) => {
       self.state.stopped()
       self.emit('stop')
       callback()
-    }
-
-    if (self.state.state() !== 'running') {
-      return done(new Error('Not able to stop from state: ' + self.state.state()))
     }
 
     self.state.stop()
