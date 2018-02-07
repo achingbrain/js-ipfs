@@ -338,7 +338,7 @@ A complete API definition is in the works. Meanwhile, you can learn how to you u
 
 - [stats](https://github.com/ipfs/interface-ipfs-core/tree/master/SPEC/STATS.md)
   - [`ipfs.stats.bitswap([callback])`](https://github.com/ipfs/interface-ipfs-core/tree/master/SPEC/STATS.md#bitswap)
-  - [`ipfs.stats.bw([options, callback])`](https://github.com/ipfs/interface-ipfs-core/tree/master/SPEC/STATS.md#bw)
+  - [`ipfs.stats.bw([options, callback])`](https://github.com/ipfs/interface-ipfs-core/tree/master/SPEC/STATS.md#bw) (not implemented, yet!)
   - [`ipfs.stats.repo([options, callback])`](https://github.com/ipfs/interface-ipfs-core/tree/master/SPEC/STATS.md#repo)
   
 - [config](https://github.com/ipfs/interface-ipfs-core/tree/master/SPEC/CONFIG.md)
