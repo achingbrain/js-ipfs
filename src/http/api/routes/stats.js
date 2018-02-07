@@ -20,12 +20,4 @@ module.exports = (server) => {
       handler: resources.stats.repo
     }
   })
-
-  api.route({
-    method: '*',
-    path: '/api/v0/stats/bw',
-    config: {
-      handler: resources.stats.bw
-    }
-  })
 }
