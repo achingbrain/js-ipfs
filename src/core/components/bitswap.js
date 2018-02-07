@@ -27,7 +27,7 @@ module.exports = function bitswap (self) {
       const snapshot = self._bitswap.stat().snapshot
 
       callback(null, {
-        provideBufLen: snapshot.providesBufferLength,
+        provideBufLen: parseInt(snapshot.providesBufferLength.toString()),
         blocksReceived: new Big(snapshot.blocksReceived),
         wantlist: formatWantlist(self._bitswap.getWantlist()),
         peers: self._bitswap.peers().map((id) => id.toB58String()),

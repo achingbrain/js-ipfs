@@ -15,7 +15,22 @@ module.exports = function repo (self) {
     gc: () => {},
 
     stat: promisify((options, callback) => {
-      self._repo.stat(options, callback)
+      if (typeof options === 'function') {
+        callback = options
+        options = {}
+      }
+
+      self._repo.stat(options, (err, stats) => {
+        if (err) return callback(err)
+
+        callback(null, {
+          numObjects: stats.numObjects,
+          repoSize: stats.repoSize,
+          repoPath: stats.repoPath,
+          version: stats.version.toString(),
+          storageMax: stats.storageMax
+        })
+      })
     }),
 
     path: () => self._repo.path
